@@ -1,7 +1,7 @@
-from blogApp.models import Post
+from blogApp.models import Blog
 from django import forms
 
 class BlogForm(forms.ModelForm):
     class Meta:
-        model=Post
+        model=Blog
         fields=['title','content']
