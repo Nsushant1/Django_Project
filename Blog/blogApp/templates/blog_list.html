@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Blog List</h1>
+    <a href="{% url 'create_blog' %}">Create New Blog</a>
+    <ul>
+        {% for blog in blogs %}
+        <li>
+            <h2>{{ blog.title }}</h2>
+            <p>{{ blog.content }}</p>
+            <a href="{% url 'update_blog' blog.id %}">Edit</a> |
+            <a href="{% url 'delete_blog' blog.id %}">Delete</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
